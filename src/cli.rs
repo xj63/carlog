@@ -2,7 +2,7 @@ use clap::{Args, Parser, Subcommand};
 use std::net::IpAddr;
 
 #[derive(Parser, Debug)]
-#[command(version, about)]
+#[command(author, version, about)]
 pub struct Cli {
     #[command(subcommand)]
     pub command: Commands,
