@@ -1,6 +1,10 @@
 [package]
 name = "carlog"
 version = "0.1.0"
+authors = ["xj63 <xj63work@163.com>"]
+description = "ticar2 log analysis and control tools."
+repository = "https://github.com/xj63/carlog"
+license = "MIT"
 edition = "2021"
 
 [dependencies]
