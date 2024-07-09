@@ -1,5 +1,6 @@
-use clap::{Args, Parser, Subcommand};
-use std::net::IpAddr;
+use clap::{Parser, Subcommand};
+
+use carlog::connect::Connect;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about)]
@@ -19,23 +20,5 @@ impl Commands {
         match self {
             Commands::Connect(c) => c.run(),
         }
-    }
-}
-
-#[derive(Debug, Args)]
-pub struct Connect {
-    /// ticar2 named in carlog.toml
-    device: Option<String>,
-    /// ticar2 ip to connect
-    #[arg(short, long)]
-    ip: Option<IpAddr>,
-    /// ticar2 port to connect
-    #[arg(short, long)]
-    port: Option<u16>,
-}
-
-impl Connect {
-    pub fn run(self) {
-        println!("connect to {:?}", self);
     }
 }
