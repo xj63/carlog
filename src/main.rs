@@ -3,7 +3,8 @@ use clap::Parser;
 mod cli;
 use cli::Cli;
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let cli = Cli::parse();
-    cli.command.run();
+    cli.command.run().await;
 }

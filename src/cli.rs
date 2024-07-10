@@ -16,9 +16,9 @@ pub enum Commands {
 }
 
 impl Commands {
-    pub fn run(self) {
+    pub async fn run(self) {
         match self {
-            Commands::Connect(c) => c.run(),
+            Commands::Connect(c) => c.run().await,
         }
     }
 }
