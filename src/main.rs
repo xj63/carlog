@@ -1,7 +1,5 @@
+use carlog::cli::Cli;
 use clap::Parser;
-
-mod cli;
-use cli::Cli;
 
 #[tokio::main]
 async fn main() {
