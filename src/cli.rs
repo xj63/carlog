@@ -1,6 +1,6 @@
 use clap::{Parser, Subcommand};
 
-use carlog::connect::Connect;
+use carlog::connect::ConnectSubcommand;
 
 #[derive(Parser, Debug)]
 #[command(author, version, about)]
@@ -12,7 +12,7 @@ pub struct Cli {
 #[derive(Debug, Subcommand)]
 pub enum Commands {
     /// connect to ticar2, watch log and send message.
-    Connect(Connect),
+    Connect(ConnectSubcommand),
 }
 
 impl Commands {
