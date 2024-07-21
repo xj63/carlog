@@ -1,6 +1,7 @@
 use clap::{Parser, Subcommand};
 
 use crate::connect::ConnectSubcommand;
+use crate::control::ControlSubcommand;
 use crate::generate::GenerateSubcommand;
 
 #[derive(Parser, Debug)]
@@ -16,6 +17,8 @@ pub enum Commands {
     Connect(ConnectSubcommand),
     /// generate manual or shell complete
     Generate(GenerateSubcommand),
+    /// remote control ticar2
+    Control(ControlSubcommand),
 }
 
 impl Commands {
@@ -23,6 +26,7 @@ impl Commands {
         match self {
             Commands::Connect(cmd) => cmd.run().await,
             Commands::Generate(cmd) => cmd.run().await,
+            Commands::Control(cmd) => cmd.run().await,
         }
     }
 }
