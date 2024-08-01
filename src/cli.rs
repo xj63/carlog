@@ -3,6 +3,7 @@ use clap::{Parser, Subcommand};
 use crate::connect::ConnectSubcommand;
 use crate::control::ControlSubcommand;
 use crate::generate::GenerateSubcommand;
+use crate::repl::ReplSubcommand;
 use crate::watch::WatchSubcommand;
 
 #[derive(Parser, Debug)]
@@ -22,6 +23,8 @@ pub enum Commands {
     Control(ControlSubcommand),
     /// watch ticar2 log
     Watch(WatchSubcommand),
+    /// repl ticar2 log
+    Repl(ReplSubcommand),
 }
 
 impl Commands {
@@ -31,6 +34,7 @@ impl Commands {
             Commands::Generate(cmd) => cmd.run().await,
             Commands::Control(cmd) => cmd.run().await,
             Commands::Watch(cmd) => cmd.run().await,
+            Commands::Repl(cmd) => cmd.run().await,
         }
     }
 }

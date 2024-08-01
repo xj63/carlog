@@ -14,7 +14,9 @@ clap_mangen = "0.2.22"
 console = { version = "0.15.8", features = ["windows-console-colors"] }
 futures-util = { version = "0.3.30", features = ["sink"] }
 ratatui = "0.27.0"
+reedline = "0.32.0"
 serde = { version = "1.0.204", features = ["derive"] }
 serde_json = "1.0.120"
+shi = "0.1.5"
 tokio = { version = "1.38.0", features = ["full"] }
 tokio-tungstenite = "0.23.1"
